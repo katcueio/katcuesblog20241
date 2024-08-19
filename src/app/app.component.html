@@ -1,57 +1,80 @@
-<main>
-  <div class="content-wrapper">
-    <section class="section">
-      <div class="wrapper-50 copy-wrapper">
-        <div class="container nav-container">
-          <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.466 17.6812V19.9608H10.918V10.8608H13.466V14.6413L16.989 10.8608H19.823L16.1077 14.8858L20.018 19.9608H17.028L14.4217 16.6572L13.466 17.6812Z" fill="#2E1A1D" />
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M30.0088 15.4609C30.0088 23.7452 23.2931 30.4609 15.0088 30.4609C6.72452 30.4609 0.00878906 23.7452 0.00878906 15.4609C0.00878906 7.17667 6.72452 0.460938 15.0088 0.460938C23.2931 0.460938 30.0088 7.17667 30.0088 15.4609ZM26.0088 15.4609C26.0088 21.5361 21.0839 26.4609 15.0088 26.4609C8.93366 26.4609 4.00879 21.5361 4.00879 15.4609C4.00879 9.38581 8.93366 4.46094 15.0088 4.46094C21.0839 4.46094 26.0088 9.38581 26.0088 15.4609Z"
-              fill="#2E1A1D" />
-          </svg>
-          <div class="nav-wrapper">
-            @for (navItem of [
-            { navLabel: 'Articles', link: '#' },
-            { navLabel: 'Travelers', link: '#' },
-            { navLabel: 'About', link: '#' },
-            { navLabel: 'Submit a story', link: '#' },
-            ]; track navItem.navLabel) {
-            <a [href]="navItem.link" target="_blank" rel="noopener">
-              <span>{{ navItem.navLabel}}</span>
-            </a>
-            }
-          </div>
-        </div>
-        <div class="container container-1">
-          <span class="article-number">Article nr. {{articleNumber}}</span>
-          <h1 style="white-space: pre-line">{{ articleTitle }}</h1>
+<!-- nav -->
+<nav class="main-nav">
+  <a href="#" class="brand">
+    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.466 17.6812V19.9608H10.918V10.8608H13.466V14.6413L16.989 10.8608H19.823L16.1077 14.8858L20.018 19.9608H17.028L14.4217 16.6572L13.466 17.6812Z" fill="#FFFFFF" />
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M30.0088 15.4609C30.0088 23.7452 23.2931 30.4609 15.0088 30.4609C6.72452 30.4609 0.00878906 23.7452 0.00878906 15.4609C0.00878906 7.17667 6.72452 0.460938 15.0088 0.460938C23.2931 0.460938 30.0088 7.17667 30.0088 15.4609ZM26.0088 15.4609C26.0088 21.5361 21.0839 26.4609 15.0088 26.4609C8.93366 26.4609 4.00879 21.5361 4.00879 15.4609C4.00879 9.38581 8.93366 4.46094 15.0088 4.46094C21.0839 4.46094 26.0088 9.38581 26.0088 15.4609Z"
+        fill="#FFFFFF" />
+    </svg>
+  </a>
+  <div class="nav-wrapper">
+    @for (navItem of [
+    { navLabel: 'Articles', link: '#' },
+    { navLabel: 'Travelers', link: '#' },
+    { navLabel: 'About', link: '#' },
+    { navLabel: 'Submit a story', link: '#' },
+    ]; track navItem.navLabel) {
+    <a [href]="navItem.link" target="_blank" rel="noopener">
+      <span>{{ navItem.navLabel}}</span>
+    </a>
+    }
+  </div>
+</nav>
 
-        </div>
-        <div class="container container-2">
-          <img src="../assets/imgs/authorProfileImg.png" alt="author profile img" width="30px">
-          <p class="author-name">By {{authorName}} in <span class="article-topic">nature</span></p>
-        </div>
-        <div class="container container-3">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut erat pulvinar, malesuada ipsum pretium, mollis urna. Sed interdum quam eget justo bibendum, quis tristique sem rhoncus. Etiam tristique maximus suscipit. Donec ac consectetur est. Lorem ipsum dolor, sit amet
-            consectetur
-            dipisicing elit. Assumenda aliquid quae ullam nam? Ipsam iure temporibus magnam optio nisi sit veniam aperiam quos ullam maxime neque, fugiat inventore aliquid ab iusto, delectus fugit, autem cum. Id!</p>
-        </div>
-        <div class="container container-4">
-          @for (articleLink of [
-          { linkToFullArticle: 'Continue Reading - 11 min read time', link: '#' },
-          ]; track articleLink.linkToFullArticle) {
-          <a [href]="articleLink.link" target="_blank" rel="noopener">
-            <span class="article-link">{{ articleLink.linkToFullArticle }}</span>
+<!-- main -->
+<main>
+  <section class="section">
+    <div class="wrapper-50 copy-wrapper">
+      <!-- <div class="container nav-container">
+        <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.466 17.6812V19.9608H10.918V10.8608H13.466V14.6413L16.989 10.8608H19.823L16.1077 14.8858L20.018 19.9608H17.028L14.4217 16.6572L13.466 17.6812Z" fill="#2E1A1D" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M30.0088 15.4609C30.0088 23.7452 23.2931 30.4609 15.0088 30.4609C6.72452 30.4609 0.00878906 23.7452 0.00878906 15.4609C0.00878906 7.17667 6.72452 0.460938 15.0088 0.460938C23.2931 0.460938 30.0088 7.17667 30.0088 15.4609ZM26.0088 15.4609C26.0088 21.5361 21.0839 26.4609 15.0088 26.4609C8.93366 26.4609 4.00879 21.5361 4.00879 15.4609C4.00879 9.38581 8.93366 4.46094 15.0088 4.46094C21.0839 4.46094 26.0088 9.38581 26.0088 15.4609Z"
+            fill="#2E1A1D" />
+        </svg>
+        <div class="nav-wrapper">
+          @for (navItem of [
+          { navLabel: 'Articles', link: '#' },
+          { navLabel: 'Travelers', link: '#' },
+          { navLabel: 'About', link: '#' },
+          { navLabel: 'Submit a story', link: '#' },
+          ]; track navItem.navLabel) {
+          <a [href]="navItem.link" target="_blank" rel="noopener">
+            <span>{{ navItem.navLabel}}</span>
           </a>
           }
         </div>
+      </div> -->
+      <div class="container container-1">
+        <span class="article-number">Article nr. {{articleNumber}}</span>
+        <h1 style="white-space: pre-line">{{ articleTitle }}</h1>
+
       </div>
-      <div class="wrapper-50 media-wrapper">
-        <img src="../assets/imgs/redRockCanyon.png" alt="a vista of Red Rock Canyon">
+      <div class="container container-2">
+        <img src="../assets/imgs/authorProfileImg.png" alt="author profile img" width="30px">
+        <p class="author-name">By {{authorName}} in <span class="article-topic">nature</span></p>
       </div>
-      <div class="bg-shadow"></div>
-    </section>
-  </div>
+      <div class="container container-3">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut erat pulvinar, malesuada ipsum pretium, mollis urna. Sed interdum quam eget justo bibendum, quis tristique sem rhoncus. Etiam tristique maximus suscipit. Donec ac consectetur est. Lorem ipsum dolor, sit amet
+          consectetur
+          dipisicing elit. Assumenda aliquid quae ullam nam? Ipsam iure temporibus magnam optio nisi sit veniam aperiam quos ullam maxime neque, fugiat inventore aliquid ab iusto, delectus fugit, autem cum. Id!</p>
+      </div>
+      <div class="container container-4">
+        @for (articleLink of [
+        { linkToFullArticle: 'Continue Reading - 11 min read time', link: '#' },
+        ]; track articleLink.linkToFullArticle) {
+        <a [href]="articleLink.link" target="_blank" rel="noopener">
+          <span class="article-link">{{ articleLink.linkToFullArticle }}</span>
+        </a>
+        }
+      </div>
+    </div>
+    <div class="wrapper-50 media-wrapper">
+      <img src="../assets/imgs/redRockCanyon.png" alt="a vista of Red Rock Canyon">
+    </div>
+    <div class="bg-shadow"></div>
+  </section>
 </main>
 
 <router-outlet></router-outlet>
