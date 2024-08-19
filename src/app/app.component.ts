@@ -7,8 +7,15 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'katcuesblog2024-1';
+  navLabel = '';
+  articleNumber = '000001';
+  articleTitle = 'Hiking' + '\n' + 'Through' + '\n' + 'Canyons';
+  authorProfileImg = '';
+  authorName = 'Kathy Cuevas';
+  articleTopic = '';
+  articleIntro = '';
+  linkToFullArticle = '';
 }
